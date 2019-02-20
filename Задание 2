@@ -26,7 +26,6 @@ import re
 new=re.findall(r'(?<=[a-z]{2})([A-Z]{1,}(?=[A-Z]{2}))',line)
 print(new)
 # Вариант 2 без помощи re
-line.join(line)
 new=[]
 i=""
 for l in range(len(line)-2):
