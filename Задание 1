@@ -21,10 +21,10 @@ line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO'\
        'XiUWgsKQrDOeZoNlZNRvHnLgCmysUeKnVJXPFIzvdDyleXylnKBfLCjLHntltignbQoiQ'\
        'zTYwZAiRwycdlHfyHNGmkNqSwXUrxGc'
 import re
-#1 вариант
+#1 вариант с помощью re
 new=re.findall(r'[a-z]+(?=[A-Z]+)',line)
 print(new)
-#2 вариант
+#2 вариант без помощи re
 new=[]
 i=""
 for l in range(len(line)):
