@@ -1,0 +1,43 @@
+# Задание-2:
+# Вывести символы в верхнем регистре, слева от которых находятся
+# два символа в нижнем регистре, а справа - два символа в верхнем регистре.
+# Т.е. из строки 
+# "GAMkgAYEOmHBSQsSUHKvSfbmxULaysmNOGIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLec"
+# нужно получить список строк: ['AY', 'NOGI', 'P']
+# Решить задачу двумя способами: с помощью re и без.
+
+line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm'\
+       'NOGIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewV'\
+       'fzKTUfSYtBydXaVIpxWjNKgXANvIoumesCSSvjEGRJosUfuhRRDUuTQwLlJJJDdkVjfSA'\
+       'HqnLxooisBDWuxIhyjJaXDYwdoVPnsllMngNlmkpYOlqXEFIxPqqqgAWdJsOvqppOfyIV'\
+       'jXapzGOrfinzzsNMtBIOclwbfRzytmDgEFUzxvZGkdOaQYLVBfsGSAfJMchgBWAsGnBnW'\
+       'etekUTVuPluKRMQsdelzBgLzuwiimqkFKpyQRzOUyHkXRkdyIEBvTjdByCfkVIAQaAbfC'\
+       'vzQWrMMsYpLtdqRltXPqcSMXJIvlBzKoQnSwPFkapxGqnZCVFfKRLUIGBLOwhchWCdJbR'\
+       'uXbJrwTRNyAxDctszKjSnndaFkcBZmJZWjUeYMdevHhBJMBSShDqbjAuDGTTrSXZywYkm'\
+       'jCCEUZShGofaFpuespaZWLFNIsOqsIRLexWqTXsOaScgnsUKsJxiihwsCdBViEQBHQaOn'\
+       'LfBtQQShTYHFqrvpVFiiEFMcIFTrTkIBpGUflwTvAzMUtmSQQZGHlmQKJndiAXbIzVkGS'\
+       'euTSkyjIGsiWLALHUCsnQtiOtrbQOQunurZgHFiZjWtZCEXZCnZjLeMiFlxnPkqfJFbCf'\
+       'KCuUJmGYJZPpRBFNLkqigxFkrRAppYRXeSCBxbGvqHmlsSZMWSVQyzenWoGxyGPvbnhWH'\
+       'uXBqHFjvihuNGEEFsfnMXTfptvIOlhKhyYwxLnqOsBdGvnuyEZIheApQGOXWeXoLWiDQN'\
+       'JFaXiUWgsKQrDOeZoNlZNRvHnLgCmysUeKnVJXPFIzvdDyleXylnKBfLCjLHntltignbQ'\
+       'oiQzTYwZAiRwycdlHfyHNGmkNqSwXUrxGC'
+# Вариант 1 с помощью re
+import re
+new=re.findall(r'(?<=[a-z]{2})([A-Z]{1,}(?=[A-Z]{2}))',line)
+print(new)
+# Вариант 2 без помощи re
+line.join(line)
+new=[]
+i=""
+for l in range(len(line)-2):
+    if line[l].isupper() and line[l-1].islower()and line[l-2].islower() and line[l+1].isupper() and line[l+2].isupper():
+        i+=line[l]
+    elif len(i)>0 and line[l].isupper() and line[l-1]==i[len(i)-1] and line[l+1].isupper()and line[l+2].isupper():
+        i+=line[l]
+    elif len(i)>0 and line[l].isupper() and line[l-1]==i[len(i)-1] and line[l+1].isupper() and line[l+2].lower():
+        new.append(i)
+        i=""        
+print(new)
+
+
+        
