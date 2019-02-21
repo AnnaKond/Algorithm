@@ -1,0 +1,29 @@
+# Задание-3:
+# Напишите скрипт, заполняющий указанный файл (самостоятельно задайте имя файла)
+# произвольными целыми цифрами, в результате в файле должно быть
+# 2500-значное произвольное число.
+# Найдите и выведите самую длинную последовательность одинаковых цифр
+import random
+new=[]
+while len(new)<=2500:
+    new.append(str(random.randint(1,9)))
+new="".join(new) # искомое 2500-значное произвольное число
+print(new)
+seq=[] # список последовательностей, состоящих из одинаковых цифр
+s=[] # последовательность одинаковых цифр
+for i in range(len(new)-1):
+    if new[i]==new[i+1] and new[i]!=new[i-1]:
+        s.append(new[i])
+        s.append(new[i])
+    elif new[i]==new[i+1] and new[i]==new[i-1]:
+        s.append(new[i])
+    elif new[i]==new[i-1] and new[i]!=new[i+1]:
+        seq.append(s)
+        s=[]
+len_seq=[] #список длинн последовательностей, состоящих из одинаковых цифр
+for s in seq:
+    len_seq.append(len(s))
+print("Самая длинная последовательность одинаковых цифр: ","".join(seq[len_seq.index(max(len_seq))]))
+k=open("numeric2500.txt", "w+")
+k.write(new) #число записано в файл numeric2500.txt
+k.close()
