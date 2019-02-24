@@ -1,0 +1,19 @@
+# Задача-3:
+# Напишите собственную реализацию стандартной функции filter.
+s=[1,-4,6,8,-10]
+def filtr(func, a):
+    k=[]
+    for i in a:
+        if func(i):
+            k.append(i)
+    return k
+
+def f(x):
+    if x>0:
+        return 1
+    else:
+        return 0
+    
+b=filtr(f,s)
+b=list(b)
+print(b)
