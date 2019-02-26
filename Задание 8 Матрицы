@@ -1,0 +1,49 @@
+matrix=[[1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [10, 11, 12]]
+print(matrix)
+for i in matrix:
+    print(i)
+#использование WHILE
+i=0
+while len(matrix) > i:
+    line = matrix[i]
+    j=0
+    while len(line) > j:
+        print("matrix[{}][{}]={}".format(i, j, matrix[i][j]))
+        j += 1
+    i += 1
+#использование FOR
+for i, row in enumerate(matrix):
+    for j, elem in enumerate(row):
+        print("matrix[{}][{}] = {}".format(i, j, matrix[i][j]))        
+print(matrix)
+
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        print("matrix[{}][{}] = {}".format(i, j, matrix[i][j]))
+
+# поворот матрицы
+print("rotate_matrix =", list(map(list, zip(*matrix))))
+matrix_reverse=[]
+for line in list(zip(*matrix)):
+    matrix_reverse.append(list(line))
+print(matrix_reverse)
+    
+# Задание-1:
+# Матрицы в питоне реализуются в виде вложенных списков:
+# Пример. Дано:
+matrix = [[1, 0, 8],
+          [3, 4, 1],
+          [0, 4, 2]]
+          
+# Выполнить поворот (транспонирование) матрицы
+# Пример. Результат:
+# matrix_rotate = [[1, 3, 0],
+#                  [0, 4, 4],
+#                  [8, 1, 2]]
+
+# Суть сложности hard: Решите задачу в одну строку
+print(list(map(list, zip(*matrix))))
+
