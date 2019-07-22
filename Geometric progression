@@ -1,0 +1,13 @@
+#geometric progression
+b = 2  # first number of sequence
+q = 3 
+n = 10 
+k=1
+list =[b] #sequence
+for i in range(n):
+    c = b*q**k 
+    list.append(c)
+    k+=1
+s = (b-c*q)/(1-q) # summ of n-members of sequence, first way 
+s2 = b*(1-q**k)/(1-q) # summ of n-members of sequence, second way
+print(list, s, s2)
