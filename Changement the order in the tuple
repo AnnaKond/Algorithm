@@ -1,0 +1,17 @@
+№Change the order of the elements of the tuple to the opposite
+# 1 way
+
+t = (15, 45, 'd', 98)
+t = list(t)
+t.reverse()
+t_new = tuple(t)
+print(t_new)
+
+#2 way
+tr =(1, 17, 'wr', 9)
+tr_list = []
+for i in range(len(tr)):
+    tr_list.append(tr[len(tr)-i-1])
+    i+=1
+tr_new1 = tuple(tr_list)
+tr_new1
