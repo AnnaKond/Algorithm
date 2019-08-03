@@ -16,7 +16,22 @@ def sort_to_max(origin_list):
     return seq
 # пример
 print(sort_to_max([2, 10, -12, 2.5, 20, -11, 4, 4, 0,-15,4,20]))
-    
+
+# второй вариант
+import random
+lst = [random.randint(-100, 100) for i in range(int(input("Enter the number of items in the list: ")))]
+print(lst)
+n=1
+while n !=len(lst):
+    for i in range(len(lst)-n):
+        if lst[i]>lst[i+1]:
+            m = lst[i]
+            lst[i] = lst[i+1]
+            lst[i+1] = m
+            print(lst)
+    n =n + 1
+ print(lst)
+
     
     
     
