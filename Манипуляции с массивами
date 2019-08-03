@@ -32,3 +32,13 @@ lst1 = lst[k:k+m]
 lst[k:k+m] = lst[p:p+m]
 lst[p:p+m] = lst1
 print(lst)
+
+# Дан одномерный массив числовых значений, насчитывающий N элементов.
+# Исключить из него M элементов, начиная с позиции K.
+import random
+lst = [random.randint(-100, 100) for i in range(int(input("Enter the number of items in the list: ")))]
+print(lst)
+k = int(input("number K: "))
+p = int(input("number P: "))
+lst=lst[:k]+lst[k+p:]
+print(lst)
