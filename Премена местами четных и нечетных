@@ -1,0 +1,10 @@
+# Создать одномерный массив. Поменять местами элементы стоящие на чётныъх и нечётных местах
+import random
+lst = [random.randint(-100, 100) for i in range(int(input("Enter the number of items in the list: ")))]
+print(lst)
+for i in range(len(lst)-1):
+    if i%2 == 0:
+        m = lst[i]
+        lst[i] = lst[i+1]
+        lst[i+1] =m
+print(lst)
