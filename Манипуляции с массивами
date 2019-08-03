@@ -42,3 +42,32 @@ k = int(input("number K: "))
 p = int(input("number P: "))
 lst=lst[:k]+lst[k+p:]
 print(lst)
+
+# Дан одномерный массив числовых значений, насчитывающий N элементов.
+# Сумму элементов массива и количество положительных элементов поставить на первое и второе место.
+import random
+lst = [random.randint(-100, 100) for i in range(int(input("Enter the number of items in the list: ")))]
+print(lst)
+s= sum(lst)
+c = len([i for i in lst if i > 0])
+lst[0] = s
+lst[1] =c
+print(lst)
+
+# Дан одномерный массив числовых значений, насчитывающий N элементов.
+# Исключить все нулевые элементы.
+import random
+lst = [random.randint(-1, 1) for i in range(int(input("Enter the number of items in the list: ")))]
+print(lst)
+lst2 = [i for i in lst if i!=0]
+lst2
+
+# Дан одномерный массив числовых значений, насчитывающий N элементов.
+# Исключить из него M элементов, начиная с позиции K.
+import random
+lst = [random.randint(-100, 100) for i in range(int(input("Enter the number of items in the list: ")))]
+print(lst)
+k = int(input("number K: "))
+p = int(input("number P: "))
+lst=lst[:k]+lst[k+p:]
+print(lst)
