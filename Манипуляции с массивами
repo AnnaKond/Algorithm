@@ -71,3 +71,15 @@ k = int(input("number K: "))
 p = int(input("number P: "))
 lst=lst[:k]+lst[k+p:]
 print(lst)
+
+# Дан одномерный массив числовых значений, насчитывающий N элементов.
+# После каждого отрицательного элемента вставить новый элемент, равный квадрату этого отрицательного элемента.
+import random
+N = random.randint(1,20)
+print(N)
+lst = [random.randint(-10, 10) for i in range(N)]
+print(lst)
+for i in range(N+len([i for i in lst if i < 0])):
+    if lst[i]<0:
+        lst.insert(i+1,lst[i]**2)           
+print(lst)
