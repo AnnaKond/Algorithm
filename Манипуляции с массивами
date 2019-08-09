@@ -83,3 +83,24 @@ for i in range(N+len([i for i in lst if i < 0])):
     if lst[i]<0:
         lst.insert(i+1,lst[i]**2)           
 print(lst)
+
+# Дан одномерный массив числовых значений, насчитывающий N элементов.
+# Определить, образуют ли элементы массива, расположенные перед первым отрицательным элементом, убывающую последовательность.
+import random
+N = random.randint(5,10)
+lst=[random.randint(-50,100) for i in range(N)]
+print(lst)
+a = 0
+for i in range(N):
+    if lst[i]<0:
+        break
+    else:
+        if lst[i]>lst[i+1] and lst[i+1] >= 0:
+            a=1
+        elif lst[i]<lst[i+1]:
+            a = 0
+            break
+if a == 1:
+    print("Array contains descending seqeunce before first negative element")
+elif a == 0:
+    print("Array doesn't contain descending seqeunce before first negative element")  
