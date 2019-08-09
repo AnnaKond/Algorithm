@@ -84,6 +84,7 @@ for i in range(N+len([i for i in lst if i < 0])):
         lst.insert(i+1,lst[i]**2)           
 print(lst)
 
+# Задача 13
 # Дан одномерный массив числовых значений, насчитывающий N элементов.
 # Определить, образуют ли элементы массива, расположенные перед первым отрицательным элементом, убывающую последовательность.
 import random
@@ -104,3 +105,44 @@ if a == 1:
     print("Array contains descending seqeunce before first negative element")
 elif a == 0:
     print("Array doesn't contain descending seqeunce before first negative element")  
+    
+# Задача 14 
+#Дан одномерный массив числовых значений, насчитывающий N элементов.
+# Из элементов исходного массива построить два новых. 
+# В первый должны входить только элементы с положительными значениями, а во второй — только элементы с отрицательными значениями.
+# Вариант 1
+import random
+N = random.randint(1,10)
+lst = [random.randint(-100, 100) for i in range(N)]
+print(lst)
+lst_n=[]
+lst_p=[]
+for i in range(N):
+    if lst[i]<0:
+        lst_n.append(lst[i])
+    elif lst[i]>=0:
+        lst_p.append(lst[i])
+print("positive array: ", lst_p, "\nnegative array:", lst_n)
+# Вариант2
+import random
+N = random.randint(1,10)
+lst = [random.randint(-100, 100) for i in range(N)]
+print(lst)
+lst_n=[i for i in lst if i<0]
+lst_p=[i for i in lst if i>=0]
+lst_n, lst_p
+
+# Задача 15
+# Дан одномерный массив числовых значений, насчитывающий N элементов. 
+# Добавить столько элементов, чтобы элементов с положительными и отрицательными значениями стало бы поровну.
+import random
+N= random.randint(1,10)
+lst = [random.randint(-100, 100) for i in range(N)]
+print(lst)
+lst_n=[i for i in lst if i<0]
+lst_p=[i for i in lst if i>=0]
+if len(lst_n)>len(lst_p):
+    lst.extend(random.randint(0, 100) for i in range(len(lst_n)-len(lst_p)))
+elif len(lst_p)>len(lst_n):
+    lst.extend(random.randint(-100, 0) for i in range(len(lst_p)-len(lst_n)))        
+print(lst)
