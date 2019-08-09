@@ -146,3 +146,18 @@ if len(lst_n)>len(lst_p):
 elif len(lst_p)>len(lst_n):
     lst.extend(random.randint(-100, 0) for i in range(len(lst_p)-len(lst_n)))        
 print(lst)
+
+# Задача 16
+# Дан одномерный массив числовых значений, насчитывающий N элементов.
+# Добавить к элементам массива такой новый элемент, 
+# чтобы сумма элементов с положительными значениями стала бы равна модулю суммы элементов с отрицательными значениями.
+import random, math
+N = random.randint(1, 10)
+lst = [random.randint(-100, 100) for i in range(N)]
+print(lst)
+lst_p = [i for i in lst if i >= 0]
+lst_n = [i for i in lst if i < 0]
+k = math.fabs(sum(lst_n))- sum(lst_p)
+lst.append(k)
+print("new_array: ",lst)
+k, sum(lst_p), sum(lst_n)
